@@ -1,8 +1,6 @@
 package myCat.cat.domain;
 
-import lombok.AccessLevel;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -11,6 +9,8 @@ import java.util.List;
 
 @Entity
 @Getter
+@Builder
+@AllArgsConstructor
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class User {
 
@@ -20,11 +20,20 @@ public class User {
 
     private String loginId;
 
+    private String password;
+
     private String name;
+
+    @Enumerated(EnumType.STRING)
+    private UserRole role;
 
     private String email;
 
     private String nickname;
+
+    private String provider;
+
+    private String providerId;
 
     private int socialCode;
 

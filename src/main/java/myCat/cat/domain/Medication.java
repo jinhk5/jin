@@ -7,7 +7,7 @@ import java.time.LocalDate;
 
 @Entity
 @Getter
-public class Medication {
+public class Medication extends Base{
 
     @Id @GeneratedValue
     @Column(name = "med_id")
@@ -17,10 +17,15 @@ public class Medication {
     @JoinColumn(name = "cat_id")
     private Cat cat;
 
-    private LocalDate date;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "mm_id")
+    private MedicationManage medicationManage;
 
-    @Embedded
-    private Base base;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "record_id")
+    private CatRecord catRecord;
+
+
 
 
 }

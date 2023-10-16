@@ -1,5 +1,8 @@
 package myCat.cat;
 
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 import myCat.cat.domain.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -9,14 +12,20 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Map;
 
+@Getter
+@Setter
+@ToString
 public class PrincipalDetails implements UserDetails, OAuth2User {
 
     private User user;
     private Map<String, Object> attributes;
 
+    private Long id;
+
     public PrincipalDetails(User user, Map<String, Object> attributes) {
         this.user = user;
         this.attributes = attributes;
+        this.id = user.getId();
     }
 
     @Override

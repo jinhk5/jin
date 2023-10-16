@@ -17,7 +17,7 @@ public class MedicationManage {
     @JoinColumn(name = "cat_id")
     private Cat cat;
 
-    private LocalDate date;
+    private String medName;
 
     @Embedded
     private Base base;

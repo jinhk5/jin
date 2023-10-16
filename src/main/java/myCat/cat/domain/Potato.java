@@ -7,15 +7,15 @@ import java.time.LocalDate;
 
 @Entity
 @Getter
-public class Potato {
+public class Potato extends Base{
 
     @Id @GeneratedValue
     @Column(name = "potato_id")
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "cat_id")
-    private Cat cat;
+    @JoinColumn(name = "record_id")
+    private CatRecord catRecord;
 
     private LocalDate date;
 
@@ -24,6 +24,5 @@ public class Potato {
     @Enumerated(EnumType.STRING)
     private PotatoStatus potatoStatus;
 
-    @Embedded
-    private Base base;
+
 }

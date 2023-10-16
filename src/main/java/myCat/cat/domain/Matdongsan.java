@@ -7,15 +7,15 @@ import java.time.LocalDate;
 
 @Entity
 @Getter
-public class Matdongsan {
+public class Matdongsan extends Base{
 
     @Id @GeneratedValue
     @Column(name = "mds_id")
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "cat_id")
-    private Cat cat;
+    @JoinColumn(name = "record_id")
+    private CatRecord catRecord;
 
     private String date;
 
@@ -26,11 +26,9 @@ public class Matdongsan {
 
     private int cntPerTime;
 
-    @Embedded
-    private Base base;
 
-    public void setCat(Cat cat) {
-        this.cat = cat;
+    public void setCat(CatRecord catRecord) {
+        this.catRecord = catRecord;
     }
 
 }

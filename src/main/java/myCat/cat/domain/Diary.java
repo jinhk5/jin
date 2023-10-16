@@ -7,7 +7,7 @@ import java.sql.Blob;
 
 @Entity
 @Getter
-public class Diary {
+public class Diary extends Base{
 
     @Id @GeneratedValue
     @Column(name = "diary_id")
@@ -23,7 +23,6 @@ public class Diary {
 
     private String mediaContents;
 
-    @Embedded
-    private Base base;
+
 
 }

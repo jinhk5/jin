@@ -1,5 +1,6 @@
 package myCat.cat;
 
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -12,8 +13,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Map;
 
-@Getter
-@Setter
+@Data
 @ToString
 public class PrincipalDetails implements UserDetails, OAuth2User {
 
@@ -26,6 +26,10 @@ public class PrincipalDetails implements UserDetails, OAuth2User {
         this.user = user;
         this.attributes = attributes;
         this.id = user.getId();
+    }
+
+    public PrincipalDetails(User user) {
+        this.user = user;
     }
 
     @Override

@@ -13,4 +13,6 @@ public class CatForm {
     private String name;
     private String profile;
     private String birthDate;
+    private String type;
+    private int gender;
 }

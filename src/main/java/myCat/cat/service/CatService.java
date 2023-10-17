@@ -62,7 +62,7 @@ public class CatService {
         return catRepository.getReferenceById(catId);
     }
 
-    public Optional<List<Cat>> findMyCats(Long userId) {
+    public List<Cat> findMyCats(Long userId) {
         return catRepository.findCatsByUserId(userId);
     }
 }

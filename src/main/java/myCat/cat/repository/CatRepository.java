@@ -24,7 +24,11 @@ public interface CatRepository extends JpaRepository<Cat, Long> {
 //    }
 //
 
-    Optional<List<Cat>> findCatsByUserId(Long userId);
+//    Optional<List<Cat>> findCatsByUserId(Long userId);
+
+    List<Cat> findCatsByUserId(Long userId);
+
+
 
 
 

@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface MatdongsanRepository extends JpaRepository<Matdongsan, Long> {
 
-
+    Matdongsan findByCatRecordId(Long recordId);
 
 
 }

@@ -7,4 +7,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface PotatoRepository extends JpaRepository<Potato, Long> {
 
+    Potato findPotatoByCatRecordId(Long recordId);
+
 }

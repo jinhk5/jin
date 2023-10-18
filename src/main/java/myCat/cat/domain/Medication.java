@@ -1,12 +1,14 @@
 package myCat.cat.domain;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
 @Getter
+@NoArgsConstructor
 public class Medication extends Base{
 
     @Id @GeneratedValue
@@ -24,6 +26,16 @@ public class Medication extends Base{
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "record_id")
     private CatRecord catRecord;
+
+    public Medication(CatRecord catRecord, MedicationManage medicationManage) {
+        this.catRecord = catRecord;
+        this.medicationManage = medicationManage;
+    }
+
+    public void update(MedicationManage medicationManage) {
+        this.medicationManage = medicationManage;
+    }
+
 
 
 

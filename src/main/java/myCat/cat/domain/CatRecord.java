@@ -25,11 +25,12 @@ public class CatRecord extends Base{
     @Enumerated(EnumType.STRING)
     private RecordType recordType;
 
-    public CatRecord(Cat cat, String date, RecordType recordType, User user) {
+    public CatRecord(Cat cat, String date, RecordType recordType) {
         this.cat = cat;
         this.date = date;
         this.recordType = recordType;
     }
+
 
 
 }

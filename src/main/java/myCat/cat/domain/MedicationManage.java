@@ -1,13 +1,15 @@
 package myCat.cat.domain;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
 @Getter
-public class MedicationManage {
+@NoArgsConstructor
+public class MedicationManage extends Base{
 
     @Id @GeneratedValue
     @Column(name = "mm_id")
@@ -19,6 +21,14 @@ public class MedicationManage {
 
     private String medName;
 
-    @Embedded
-    private Base base;
+    public MedicationManage(Cat cat, String medName) {
+        this.cat = cat;
+        this.medName = medName;
+    }
+
+    public void update(String medName) {
+        this.medName = medName;
+    }
+
+
 }

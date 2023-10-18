@@ -1,12 +1,14 @@
 package myCat.cat.domain;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
 @Getter
+@NoArgsConstructor
 public class Matdongsan extends Base{
 
     @Id @GeneratedValue
@@ -30,5 +32,22 @@ public class Matdongsan extends Base{
     public void setCat(CatRecord catRecord) {
         this.catRecord = catRecord;
     }
+
+    public Matdongsan(CatRecord catRecord, String date, String time, MdsStatus status, int cntPerTime) {
+        this.catRecord = catRecord;
+        this.date = date;
+        this.time = time;
+        this.status = status;
+        this.cntPerTime = cntPerTime;
+    }
+
+    public void update(String time, MdsStatus status, int cntPerTime) {
+        this.time = time;
+        this.status = status;
+        this.cntPerTime = cntPerTime;
+    }
+
+
+
 
 }
